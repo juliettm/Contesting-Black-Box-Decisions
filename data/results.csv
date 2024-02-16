@@ -1,0 +1,4 @@
+Sex, Single, Unemployed, Age, Credit, LoanDuration, PurposeOfLoan, InstallmentRate, Housing, Prediction, BinaryPrediction
+1.0,1.0,1.0,23.0,12000.0,45.0,4.0,4.0,2.0,0.4249330461025238,0.0
+1.0,1.0,1.0,23.0,12000.0,45.0,4.0,4.0,2.0,0.4249330461025238,0.0
+25.0,1.0,0.0,23.0,12000.0,23.0,3.0,4.0,2.0,0.9999760985374451,1.0
