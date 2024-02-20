@@ -27,23 +27,33 @@ The black-box model can be found in the `black_box` folder. The model is a simpl
 
 The interpretable model can be found in the `interpretable_model` folder. The model is a Decision Tree trained on the german credit data.
 
-## Requirements
-The code is written in Python 3.7. The required packages can be installed using the following command:
+
+## Running the code
+
+The code can be run using a virtual environment. If you haven't already installed virtualenv, you can do so using pip by running the following command:
+
+``` bash
+pip install virtualenv
 ```
+
+The packages required to run the code are listed in the `requirements.txt` file. The following commands can be used to run the code:
+
+``` bash
+virtualenv venv
+
+# On Windows
+venv\Scripts\activate
+
+# On Unix or MacOS
+source venv/bin/activate
+
 pip install -r requirements.txt
 ```
 
-This is the list of libraries used in the code:
-- numpy
-- pandas
-- scikit-learn
-- tensorflow
-- keras
-- lime
-- shap
-- matplotlib
-- seaborn
+Once you're done working on your project, you can deactivate the virtual environment by running:
 
-## Running the code
+``` bash
+deactivate
+```
 
 ## Results

@@ -9,7 +9,7 @@ import csv
 app = Flask(__name__)
 
 # Load the Decision Tree model
-model_path = '/Users/juls/Documents/Repositories/Contesting-Black-Box-Decisions/black_box/bb_model'
+model_path = 'black_box/bb_model'
 model = load_model(model_path)
 
 # HTML for the web form
@@ -61,7 +61,7 @@ def predict():
         features_to_scale = ['Age', 'Credit', 'LoanDuration']
 
         # Load the scaler
-        scaler_path = '/Users/juls/Documents/Repositories/Contesting-Black-Box-Decisions/black_box/bb_scaler.joblib'  # Update this path
+        scaler_path = 'black_box/bb_scaler.joblib'  # Update this path
         scaler = load(scaler_path)
         input_df[features_to_scale] = scaler.fit_transform(input_df[features_to_scale])
 
@@ -74,7 +74,7 @@ def predict():
         original_input['BinaryPrediction'] = binary_prediction
 
         # Path to resutls CSV
-        csv_file_path = '/Users/juls/Documents/Repositories/Contesting-Black-Box-Decisions/data/results.csv'
+        csv_file_path = 'data/results.csv'
 
         # Open the file in append mode and write the new row
         with open(csv_file_path, 'a', newline='') as file:

@@ -6,18 +6,18 @@ from sklearn.tree import _tree
 app = Flask(__name__)
 
 # Load the Decision Tree model
-model_path = '/Users/juls/Documents/Repositories/Contesting-Black-Box-Decisions/interpretable_model/best_decision_tree_model.joblib'
-model = joblib.load(model_path)
+model_path = 'interpretable_model/best_decision_tree_model.joblib'
+tree_model = joblib.load(model_path)
 
 
 # Function to get decision path details for a specific instance
-def get_decision_path_details(model, single_instance, feature_names):
-    decision_path = model.decision_path(single_instance).indices
+def get_decision_path_details(tree_model, single_instance, feature_names):
+    decision_path = tree_model.decision_path(single_instance).indices
     decision_features = []
     decision_thresholds = []
     decision_directions = []
 
-    tree_ = model.tree_
+    tree_ = tree_model.tree_
 
     for node_index in decision_path:
         if tree_.feature[node_index] != _tree.TREE_UNDEFINED:
@@ -79,13 +79,13 @@ def predict():
             input_df = pd.DataFrame([input_data],
                                     columns=["Sex", "Single", "Unemployed", "Age", "Credit", "LoanDuration",
                                              "PurposeOfLoan", "InstallmentRate", "Housing"])
-            prediction_result = model.predict(input_df)[0]
+            prediction_result = tree_model.predict(input_df)[0]
             prediction_text = 'Predicted Label: ' + str(prediction_result)
 
             # Get the decision path for the input
             feature_names = ["Sex", "Single", "Unemployed", "Age", "Credit", "LoanDuration", "PurposeOfLoan",
                              "InstallmentRate", "Housing"]
-            decision_path_text = get_decision_path_details(model, input_df, feature_names)
+            decision_path_text = get_decision_path_details(tree_model, input_df, feature_names)
         except Exception as e:
             prediction_text = f"Error in prediction: {str(e)}"
 
