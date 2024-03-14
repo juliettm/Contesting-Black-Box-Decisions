@@ -6,3 +6,6 @@ scikit-learn==1.1.2
 tensorflow
 matplotlib
 flask
+gradio
+email-validator==2.0
+
