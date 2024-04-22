@@ -67,7 +67,7 @@ def predict():
 
         # Make prediction
         prediction_result = model.predict(input_df)
-        binary_prediction = 1 if prediction_result[0] >= 0.5 else 0
+        binary_prediction = 1 if prediction_result[0] < 0.5 else 0
         prediction = 'Predicted Label: ' + str(prediction_result[0]) + ', Binary: ' + str(binary_prediction)
 
         original_input['Prediction'] = prediction_result[0]

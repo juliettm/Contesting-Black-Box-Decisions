@@ -51,6 +51,8 @@ By running the file `bb_app.py` a simple web application is launched. The user c
 The interpretable model can be found in the `interpretable_model` folder. The model is a Decision Tree trained on the results of the black-box model. The results of the black-box model are used as the target variable for the Decision Tree. Acc = 0.7.
 By running the file `im_app.py` a simple web application is launched. The user can input the features of a customer and the model will predict whether the customer is a good or bad customer. The interface will also show the features path for the prediction.
 
+The app is publicly available at [GermanCredit](https://huggingface.co/spaces/juliettm/GermanCredit) space in HuggingFace.
+
 ## Running the code
 
 The code can be run using a virtual environment. If you haven't already installed virtualenv, you can do so using pip by running the following command:
