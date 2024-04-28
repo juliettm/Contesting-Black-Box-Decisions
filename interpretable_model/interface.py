@@ -35,9 +35,9 @@ def get_decision_path_details(tree_model, single_instance, feature_names):
     return decisions
 def loan_prediction(Sex, CivilStatus, EmploymentStatus, age, credit_amount, duration, PurposeOfLoan, installmentRate, housing):
 
-    # Placeholder model, replace this with your actual model
+    # Placeholder model
     model = tree_model
-    # Sample input transformation, replace this with your actual preprocessing
+    # Sample input transformation
     loan_purposes = {"Business":1, "Education":2, "Electronics":3, "Furniture":4, "HomeAppliances":5, "NewCar":6, "Other":7, "Repairs":8, "Retraining":9, "UsedCar":10}
     gender = {"Male": 1, "Female": 0}
     housing_type = {"Own": 1, "Rent": 2, "Other": 3}
@@ -56,7 +56,7 @@ def loan_prediction(Sex, CivilStatus, EmploymentStatus, age, credit_amount, dura
                             ]])
     # Sample prediction
     prediction = model.predict(input_data)
-    # Sample output, replace this with your actual output
+    # Sample output
     output = "Good Customer" if prediction == 1 else "Bad Customer"
 
     # Prepare data for prediction
